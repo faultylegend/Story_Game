@@ -1,0 +1,10 @@
+join blacksmith 0 [animation="Slide Left In Out"]
+blacksmith: Oh, hello there!
+blacksmith: I was looking through some old tools I have made in the past.
+join swordCharacter 4 [animation="Fade In Out"]
+blacksmith: And I found this old thing, one of the first swords I crafted.
+blacksmith: Of course I make much better swords now...
+blacksmith: But this one still means a lot.
+blacksmith: I would like you to have her...
+leave swordCharacter [animation="Fade In Out"]
+blacksmith: Take care of her, she means a lot to me

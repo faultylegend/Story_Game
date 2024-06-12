@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bloo0f4snud4b"]
+[gd_scene load_steps=16 format=3 uid="uid://bloo0f4snud4b"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ju7vq"]
 [ext_resource type="Texture2D" uid="uid://dectxwrdfqdj1" path="res://assets/kenney_tiny-dungeon/Tiles/tile_0085.png" id="1_x4rl8"]
+[ext_resource type="Texture2D" uid="uid://dx7yt3qdiql47" path="res://assets/kenney_tiny-dungeon/Tiles/tile_0103.png" id="3_gpvas"]
 [ext_resource type="PackedScene" uid="uid://b1m8viv4xcuw6" path="res://components/health_component.tscn" id="3_ti6sn"]
 [ext_resource type="PackedScene" uid="uid://dujbyit8q2uc1" path="res://components/hitbox_component.tscn" id="4_5cviv"]
 
@@ -13,7 +14,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/path = NodePath("character:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,7 +26,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/path = NodePath("character:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -37,7 +38,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:rotation")
+tracks/2/path = NodePath("character:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -54,7 +55,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/path = NodePath("character:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -66,7 +67,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/path = NodePath("character:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -78,7 +79,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:rotation")
+tracks/2/path = NodePath("character:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -95,7 +96,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/path = NodePath("character:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -112,18 +113,118 @@ _data = {
 "walk": SubResource("Animation_dqx2n")
 }
 
+[sub_resource type="Animation" id="Animation_kei6x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tool:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(9, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("tool:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.1719]
+}
+
+[sub_resource type="Animation" id="Animation_33gdi"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tool:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(9, 0), Vector2(9, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("tool:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.252777]
+}
+
+[sub_resource type="Animation" id="Animation_t1um0"]
+resource_name = "swing"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tool:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(9, 0), Vector2(14, 1), Vector2(13, 4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("tool:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.252777, 1.1719, 1.9061]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1p88v"]
+_data = {
+"RESET": SubResource("Animation_kei6x"),
+"idle": SubResource("Animation_33gdi"),
+"swing": SubResource("Animation_t1um0")
+}
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d5p36"]
 radius = 7.0
 height = 20.0
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_ju7vq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="character" type="Sprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(2.08165e-12, -1)
 rotation = -0.174533
 scale = Vector2(1, 1.125)
 texture = ExtResource("1_x4rl8")
+
+[node name="tool" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(9, -2)
+rotation = 1.1719
+texture = ExtResource("3_gpvas")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
@@ -132,10 +233,16 @@ shape = SubResource("CircleShape2D_fubew")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="PlayerAnim" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_ih5rw")
 }
+
+[node name="WeaponAnim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1p88v")
+}
+autoplay = "idle"
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_ti6sn")]
 

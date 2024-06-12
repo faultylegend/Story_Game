@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0bjkad3vri25"]
+[gd_scene load_steps=8 format=3 uid="uid://b0bjkad3vri25"]
 
 [ext_resource type="PackedScene" uid="uid://bloo0f4snud4b" path="res://scenes/player.tscn" id="1_v2ft4"]
 [ext_resource type="Texture2D" uid="uid://bm67asbl1oua5" path="res://assets/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="2_5kvim"]
 [ext_resource type="Texture2D" uid="uid://04fk2x005ok4" path="res://assets/kenney_tiny-town/Tilemap/tilemap_packed.png" id="2_wyhri"]
+[ext_resource type="PackedScene" uid="uid://dx1sibstm12xe" path="res://scenes/npc.tscn" id="4_v6ii0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ch0eq"]
 texture = ExtResource("2_5kvim")
@@ -279,6 +280,7 @@ sources/2 = SubResource("TileSetAtlasSource_ch0eq")
 sources/3 = SubResource("TileSetAtlasSource_apx02")
 
 [node name="Overworld" type="Node2D"]
+y_sort_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_06ot0")
@@ -292,3 +294,6 @@ layer_2/tile_data = PackedInt32Array(393223, 65539, 4, 458759, 65539, 5, 524295,
 
 [node name="Player" parent="." instance=ExtResource("1_v2ft4")]
 position = Vector2(212, 154)
+
+[node name="npc" parent="." instance=ExtResource("4_v6ii0")]
+position = Vector2(136, 143)
